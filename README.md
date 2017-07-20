@@ -4,14 +4,6 @@ To start shadowsocks, run `$ docker run -d -p10800:10800 -p10800:10800/udp -p900
 #### Enable `BBR congestion control algorithm`
 For one use kernel version `>= 4.9`, should enable `TCP_CONG_BBR` in your host os in order to get a better network performance (especially in high packet-loss situation).
 
-#### Usage
-`$ docker run -it --rm luxrck/shadowsocks-kcp --help`
-
-	shadowsocks-kcp uses server mode with kcptun enabled by default
-
-	Options:
-		-c|--client    start in client mode
-		--no-kcp       disable kcptun
 
 #### Environments
 Change these environments list below to apply new settings.
@@ -35,16 +27,3 @@ SS_METHOD    |chacha20
 SS_TIMEOUT   |600
 SS_SERVER    |0.0.0.0
 
-##### kcptun
-kcptun with `--crypt none`, `--nocomp` enabled.
-Make sure to change client's command line arguments if you change these.
-
-Env.           | Val.
----------------|--------
-KCP_PORT       | 9000
-KCP_MODE       | fast
-KCP_MTU        | 1400
-KCP_SNDWND     | 1024
-KCP_RCVWND     | 1024
-KCP_DATASHARD  | 10
-KCP_PARITYSHARD| 0
