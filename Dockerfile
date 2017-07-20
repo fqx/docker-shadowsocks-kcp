@@ -15,9 +15,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && curl -sSL $SS_URL | tar xz \
     && cd $SS_DIR && ./configure && make install && cd .. && rm -rf $SS_DIR \
     && apk add --no-cache --virtual .run-deps \
-      libev libsodium pcre mbedtls udns privoxy 
+      libev libsodium pcre mbedtls udns privoxy \
 #    && mkdir -p /opt/kcptun && cd /opt/kcptun && curl -sSL $KCP_URL | tar xz \
-#    && apk del .build-deps
+    && apk del .build-deps
 
 # set to an non-zero value to enable privoxy http proxy.
 ENV PORT          8118
