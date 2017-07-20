@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
-KCP=true
-CLIENT=false
+KCP=false
+CLIENT=true
 SS_REMOTE=$SS_SERVER
 
 KCP_EXEC="/opt/kcptun/server_linux_amd64 -t 0.0.0.0:$SS_PORT -l :$KCP_PORT"
