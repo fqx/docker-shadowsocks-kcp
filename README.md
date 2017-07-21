@@ -1,3 +1,5 @@
+#### Pull Docker
+Use `docker pull bltfqx/shadowsocks-privoxy` to pull from docker.
 
 
 #### Enable `BBR congestion control algorithm`
@@ -12,15 +14,15 @@ Set `PORT` to an non-zero value to enable privoxy http proxy (only avaliable in 
 
 Env.         | Val.
 -------------|--------
-PORT         | 0
+PORT         | 8118
 
 ##### shadowsocks-libev
-Shadowsocks with `-u (udp relay)`, `--fast-open (tcp fast-open)` enabled.
+Shadowsocks with `-u (udp relay)` enabled.
 
 Env.         | Val.
 -------------|--------
-SS_PORT      |10800
-SS_LOCAL_PORT|1080
+SS_PORT      |8118
+SS_LOCAL_PORT|7070
 SS_PASSWORD  |123456
 SS_METHOD    |chacha20
 SS_TIMEOUT   |600
